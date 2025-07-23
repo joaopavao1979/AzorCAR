@@ -1,144 +1,124 @@
-# AzorCAR 🚗🌋
+# 🤖 AzorCAR – Robô Educativo Open Source com Visão Computacional
 
-**AzorCAR** é um projeto educacional, científico e open source que visa o desenvolvimento de um carro robótico autónomo baseado em Arduino e Raspberry Pi 5, com suporte para sensores de distância, LIDAR, visão computacional e navegação inteligente. Este projeto será aplicado em contextos pedagógicos, feiras de ciência (ex: AzoresBot) e como plataforma de aprendizagem em robótica, IA e ROS 2.
-
----
-
-## 🎯 Objetivos do Projeto
-
-- Desenvolver um **robô móvel autónomo** com capacidades de evitar obstáculos, seguir trajetos e reagir ao ambiente.
-- Integrar sensores como **ultrassónicos**, **LIDAR**, e **câmaras USB** com processamento em Python.
-- Explorar **Visão Computacional** com OpenCV e MediaPipe.
-- Criar uma base sólida para **expansão com ROS 2 e simulação em Webots**.
-- Fornecer documentação, fichas pedagógicas e materiais open source reutilizáveis.
+**AzorCAR** é um robô autónomo modular, desenvolvido com base em **Arduino UNO R4 WiFi** e **câmara HuskyLens**, com foco em aplicações pedagógicas de programação, visão computacional e controlo de movimento. Criado no âmbito da pós-graduação **PRIA – Universidade dos Açores**, o projeto serve como ferramenta educativa, experimental e de participação em desafios como o **AzoresBot**.
 
 ---
 
-## 📁 Estrutura de Pastas
+## 🗂️ Estrutura do Projeto
 
-| Pasta                          | Descrição                                                                         |
-|-------------------------------|------------------------------------------------------------------------------------|
-| `01_documentacao/`            | Planeamento geral, objetivos, cronogramas e análise de projetos anteriores.        |
-| `02_hardware/`                | Lista de componentes, esquemas elétricos e imagens da montagem física.             |
-| `03_software_arduino/`        | Sketches Arduino (evitador, sensores, motores).                                    |
-| `04_raspberry_pi/`            | Scripts Python para visão, deteção de cor, controlo e testes com câmera.           |
-| `05_ros2/`                    | Pacotes ROS 2, nós em Python, ficheiros `.launch.py`, `URDF` e simulações futuras. |
-| `06_simulacao/`               | Ficheiros do Webots: mundos `.wbt`, modelos 3D e controladores.                    |
-| `07_design_3d/`               | STL e ficheiros FreeCAD para impressão 3D do chassi e suportes.                    |
-| `08_testes/`                  | Relatórios e scripts de calibração de sensores e motores.                          |
-| `09_lidar/`                   | Scripts de visualização com RPLIDAR A2, dados brutos e integração ROS.             |
-| `10_recursos_pedagogicos/`    | Fichas de atividade, guias para professores, propostas de aula.                    |
-| `11_apresentacao/`            | Posters, imagens, vídeos e apresentações para o AzoresBot.                         |
-| `12_azoresbot/`               | Adaptação de desafios para o AzorCAR.                                              |
-| `13_artigo_cientifico/`       | Manuscrito do artigo final (Markdown ou LaTeX), figuras e bibliografia.            |
-| `14_website/`                 | Ficheiros para futura publicação com GitHub Pages.                                 |
-
----
-
-## 💡 Tecnologias Usadas
-
-- **Arduino UNO/Nano** com L298P (controlo de motores)
-- **Raspberry Pi 5 (8GB)** com Ubuntu 25.04
-- **Python 3** + OpenCV + MediaPipe
-- **RPLIDAR A2** para mapeamento e deteção de obstáculos
-- **ROS 2 Humble** (futuramente)
-- **Webots** para simulação 3D
+```
+AzorCAR/
+├── 01_documentacao/           → Guias técnicos, fichas, anotações
+├── 02_hardware/               → Lista de componentes, esquemas elétricos e físicos
+├── 03_software_arduino/       → Código principal: HuskyLens, motores, OLED, desafios
+├── 04_microbit/               → Testes com micro:bit e Maqueen (fase 0)
+├── 05_raspberry_pi/           → Planeamento futuro com Pi 5 + OpenCV
+├── 06_ros2/                   → Estrutura reservada para futura integração com ROS 2
+├── 07_simulacao/              → Ambientes simulados (Webots ou similares)
+├── 08_design_3d/              → Ficheiros STL/OBJ da estrutura e suportes
+├── 09_lidar/                  → Notas e testes com sensores LIDAR (planeado)
+├── 10_recursos_pedagogicos/  → Fichas didáticas, planos de aula e atividades STEM
+├── 11_apresentacao/           → Slides, vídeos, imagens para divulgação
+├── 12_azoresbot/              → Regras e materiais oficiais do desafio AzoresBot
+├── 13_artigo_cientifico/      → Artigo PIF (Springer LNAI) e referências académicas
+├── 14_website/                → Página web local / mockup para divulgação online
+```
 
 ---
 
-## 👥 Público-Alvo
+## ⚙️ Tecnologias e Componentes
 
-- Professores e alunos do ensino básico e secundário (STEM)
-- Estudantes de ensino superior em Engenharia, Robótica, IA
-- Entusiastas maker e educadores
-- Organizadores de eventos e feiras tecnológicas
-
----
-
-## 🔓 Licença
-
-Este projeto é licenciado sob a [MIT License](LICENSE), com todos os recursos educacionais e imagens sob Creative Commons BY-NC-SA 4.0.
-
----
-
-## 🤝 Contribuições
-
-Contribuições são bem-vindas!  
-Podes propor melhorias, adicionar exemplos, corrigir erros ou traduzir conteúdos.  
-Verifica o ficheiro `CONTRIBUTING.md` (em breve) para mais detalhes.
+| Componente             | Função                                      |
+|------------------------|---------------------------------------------|
+| Arduino UNO R4 WiFi    | Controlo principal                          |
+| HuskyLens (DFRobot)    | Visão computacional com IA integrada        |
+| Driver L298P           | Controlo de motores DC                      |
+| Motores + rodas        | Locomoção do robô                           |
+| OLED SH1106 (128x64)   | Feedback visual em tempo real               |
+| Servo motor SG90       | Rotação horizontal da câmara (opcional)     |
+| Powerbank / Li-ion     | Fonte de alimentação                        |
 
 ---
 
-## 📢 Nota
+## 🎯 Funcionalidades
 
-O projeto **AzorCAR** é inspirado por projetos anteriores de alunos da PRIA e pelo desafio **HuskyCar Challenge do AzoresBot**, mas é uma iniciativa **completamente autónoma, com visão open source e integração de tecnologias acessíveis** como webcam, sensores baratos e Arduino.
-
----
-
----
-
-# 🤖 AzorCAR
-
-**AzorCAR** é um projeto educativo e científico de robótica autónoma, desenvolvido com Arduino, Raspberry Pi 5, sensores variados e visão computacional. É open source, modular e adaptável para ensino, feiras tecnológicas, clubes de robótica e aplicações pedagógicas interdisciplinares.
-
----
-
-## 📂 Estrutura Geral do Projeto
-
-| Pasta | Descrição |
-|-------|-----------|
-| [01_documentacao](./01_documentacao) | Planeamento, objetivos, cronogramas e análise de projetos |
-| [02_hardware](./02_hardware) | Lista de componentes, esquemas, fotos de montagem e testes |
-| [03_software_arduino](./03_software_arduino) | Sketches e testes com Arduino UNO/Nano e o shield L298P |
-| [04_raspberry_pi](./04_raspberry_pi) | Scripts Python para visão computacional e sensores via GPIO |
-| [05_ros2](./05_ros2) | Integração com ROS 2 (nós, URDFs, launchers, comunicação) |
-| [06_simulacao](./06_simulacao) | Simulações com Webots: mundos, controladores e testes virtuais |
-| [07_design_3d](./07_design_3d) | Modelos STL/FreeCAD para impressão 3D do robô e acessórios |
-| [08_testes](./08_testes) | Calibração, validação de sensores, motores e desempenho |
-| [09_lidar](./09_lidar) | Visualização de dados com RPLIDAR, scripts e dados CSV |
-| [10_recursos_pedagogicos](./10_recursos_pedagogicos) | Fichas de atividade, planos de aula, guias e propostas didáticas |
-| [11_apresentacao](./11_apresentacao) | Posters, slides, imagens e vídeos para eventos e divulgação |
-| [12_azoresbot](./12_azoresbot) | Desafio tipo maze inspirado no HuskyCar – versão open e pedagógica |
-| [13_artigo_cientifico](./13_artigo_cientifico) | Estrutura do artigo final, referências, figuras e manuscrito |
-| [14_website](./14_website) | Arquivos e estrutura para criar um site estático (GitHub Pages) |
+✅ Deteção de cor e TAGs com HuskyLens  
+✅ Aproximação autónoma ao alvo (15–25 cm)  
+✅ Correção lateral com base no eixo X da imagem  
+✅ Paragem automática + temporização  
+✅ Procura sequencial de múltiplos IDs (por etapas)  
+✅ Visualização de dados em OLED e monitor série  
+✅ Rotação inicial de 360° para varrimento  
+✅ Organização modular do código por tarefas  
 
 ---
 
-## 🧩 Tecnologias e Linguagens Usadas
+## 🧪 Casos de Uso
 
-- 🛠️ **Arduino UNO/Nano** com C++
-- 🐍 **Python 3** (para visão computacional, sensores e LIDAR)
-- 🧠 **OpenCV, MediaPipe** para análise visual e deteção de padrões
-- 📡 **RPLIDAR A2** para navegação 2D e mapeamento
-- 🧭 **ROS 2 Humble** para integração avançada e navegação autónoma
-- 🧪 **Webots** para simulação 3D e desenvolvimento seguro antes do teste físico
-- 🧱 **FreeCAD, STL** para design e impressão de peças
+- 💡 **Educação STEM** no 3.º ciclo e secundário  
+- 🧩 **Desafios competitivos** com regras reais (AzoresBot)  
+- 🧠 **Exploração de IA embarcada** com HuskyLens  
+- 🧰 **Protótipo de baixo custo** e personalizável  
+- 👨‍🏫 **Ferramenta de apoio em clubes de robótica escolar**  
 
 ---
 
-## 🎓 Aplicações Educativas
+## 📸 Galeria
 
-- Ensino STEAM (Física, Química, TIC, Matemática, Robótica)
-- Projetos interdisciplinares com 2.º, 3.º ciclo e ensino secundário
-- Apoio a clubes de programação e oficinas maker
-- Demonstrações públicas e participação em eventos (como AzoresBot)
-- Desenvolvimento de competências em pensamento computacional e raciocínio lógico
+> Fotos e esquemas do robô, da arena e da HuskyLens em funcionamento podem ser consultados na pasta [`11_apresentacao`](./11_apresentacao) e [`imagens`](./11_apresentacao/imagens).
 
 ---
 
-## 📖 Licença
+## 🚀 Caminho Futuro
 
-Este projeto é distribuído sob a [MIT License](./LICENSE_AzorCAR.txt).  
-Conteúdos pedagógicos estão sob Creative Commons BY-NC-SA 4.0.
-
----
-
-## 🤝 Contribuições
-
-Aceitamos melhorias, exemplos, testes e adaptações pedagógicas.  
-Consulta o [guia de contribuição](./CONTRIBUTING_AzorCAR.md) para saber como participar.
+🟡 Integração de múltiplas TAGs (sequência lógica)  
+🟡 Controlo por interface web (via Wi-Fi)  
+🟡 Uso de simulação (fase ROS 2)  
+🟡 Navegação por mapa com LIDAR (opcional)  
+🟢 Artigo científico PRIA em progresso (`13_artigo_cientifico`)  
+🟢 Preparação para partilha open source e kits educativos
 
 ---
 
-> 🌍 Este projeto é 100% open source, educativo e adaptável.  
-> Concebido para ensinar, inspirar e aproximar a robótica de todos.
+## 📚 Recursos e Referências
+
+- 📘 [HuskyLens Wiki (DFRobot)](https://wiki.dfrobot.com/HUSKYLENS_Vision_Sensor_SKU_SEN0305)
+- 🧪 [Learn DFRobot HuskyLens Course](https://learn.dfrobot.com/)
+- 🖥️ [U8g2 OLED Library](https://github.com/olikraus/u8g2)
+- 🔧 [Arduino Documentation](https://docs.arduino.cc/)
+- 📄 [Artigo “AzorCAR” – Versão PRIA 2025 (em preparação)]
+
+---
+
+## 🧑‍💻 Autor
+
+**João Pavão**  
+Pós-Graduação em Programação, Robótica e Inteligência Artificial  
+Universidade dos Açores · 2025  
+[github.com/joaopavao1979](https://github.com/joaopavao1979)
+
+---
+
+## ⚖️ Licença
+
+Este projeto é disponibilizado sob a [Licença MIT](./LICENSE_AzorCAR).  
+Sinta-se à vontade para reutilizar, modificar ou adaptar para fins **educativos e não comerciais**.  
+Contribuições são bem-vindas!
+
+---
+
+## 🙌 Agradecimentos
+
+A todos os colegas, professores e membros da PRIA que contribuíram com ideias, testes e apoio técnico ao longo do desenvolvimento deste projeto.
+
+---
+
+## 🤝 Como Contribuir
+
+1. Faça um fork deste repositório  
+2. Crie uma nova branch (`git checkout -b feature/minha-funcionalidade`)  
+3. Commit das suas alterações (`git commit -m 'Nova funcionalidade'`)  
+4. Push para a branch (`git push origin feature/minha-funcionalidade`)  
+5. Abra um Pull Request e descreva a sua proposta
+
+> Detalhes em [`CONTRIBUTING_AzorCAR`](./CONTRIBUTING_AzorCAR)
